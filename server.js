@@ -3,7 +3,7 @@ const express = require('express')
 // used to help handle file paths
 const path = require('path')
 // creating shortcut to organize API calls
-const api = require('routes/api.js')
+const api = require('./routes/api.js')
 
 // This is used to process the PORT for either Heroku or Local machine
 const PORT = process.env.PORT || 3001
@@ -23,7 +23,7 @@ app.use('/api', api)
 
 // Shows note page when called
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '.public.notes.html'))
+    res.sendFile(path.join(__dirname, './public/notes.html'))
 })
 
 // for any other call takes you home instead of erroring.
